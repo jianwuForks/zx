@@ -1,6 +1,6 @@
 {
   "name": "zx",
-  "version": "5.2.0",
+  "version": "1.0.0",
   "description": "A tool for writing better scripts.",
   "main": "./index.mjs",
   "exports": {
@@ -16,18 +16,21 @@
     "node": ">= 16.0.0"
   },
   "scripts": {
-    "test": "node zx.mjs test.mjs"
+    "test": "node zx.mjs test.mjs",
+    "test-esm": "node -r esm-wallaby zx.mjs test.mjs"
   },
   "dependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/minimist": "^1.2.2",
     "@types/node": "^17.0",
     "chalk": "^5.0.0",
+    "esm-wallaby": "^3.2.26",
     "fs-extra": "^10.0.1",
     "globby": "^13.1.1",
     "minimist": "^1.2.5",
     "node-fetch": "^3.2.0",
     "ps-tree": "^1.2.0",
+    "remote-import": "^0.0.11",
     "which": "^2.0.2",
     "yaml": "^1.10.2"
   },
@@ -38,7 +41,24 @@
     "*.mjs",
     "*.d.ts"
   ],
-  "repository": "google/zx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/google/zx.git"
+  },
   "author": "Anton Medvedev <anton@medv.io>",
-  "license": "Apache-2.0"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/google/zx/issues"
+  },
+  "homepage": "https://github.com/google/zx#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "foo",
+    "bar"
+  ]
 }

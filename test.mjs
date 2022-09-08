@@ -27,6 +27,12 @@ function test(name) {
   return false
 }
 
+if (test('Remote import works')) {
+  const _ = (await import("https://jspm.dev/lodash")).default;
+  assert.equal(3, _.add(1,2));
+}
+
+
 if (test('Only stdout is used during command substitution')) {
   let hello = await $`echo Error >&2; echo Hello`
   let len = +(await $`echo ${hello} | wc -c`)

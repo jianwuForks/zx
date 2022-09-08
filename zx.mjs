@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --experimental-network-imports
 
 // Copyright 2021 Google LLC
 // 
@@ -22,6 +22,8 @@ import url from 'url'
 
 import './globals.mjs'
 import {fetch, ProcessOutput} from './index.mjs'
+
+// import RemoteImport from 'remote-import';
 
 await async function main() {
   try {
@@ -125,6 +127,8 @@ async function importPath(filepath, origin = filepath) {
   let __dirname = dirname(__filename)
   let require = createRequire(origin)
   Object.assign(global, {__filename, __dirname, require})
+  // require = require("esm")(module/*, options*/)
+  // const RemoteImport = require("./RemoteImport").default;
   await import(url.pathToFileURL(filepath))
 }
 
